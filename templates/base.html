@@ -1,0 +1,47 @@
+<!doctype html>
+{% load static %}
+
+<html lang="pt-br">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+
+        <title>{% block title %} {% endblock title %}</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark mb-3">
+            <a class="navbar-brand" href="{% url 'livros_list' %}">Livraria</a>
+
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'livros_add' %}">Adicionar Livro</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'autor_add' %}">Adicionar Autor</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'livros_list'%}">Listar Livros</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'autor_list' %}">Listar Autores</a>
+                </li>
+            </ul>
+        </nav>
+
+        {% block content %}
+        {% endblock content %}
+        <!-- jQuery, Popper.js, and Bootstrap JS -->
+        <script src="{% static 'js/jquery-3.5.1.slim.min.js' %}" ></script>
+        <script src="{% static 'js/popper.min.js' %}"></script>
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        
+    </body>
+</html>
